@@ -6,10 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Circles</title>
     <script type="text/javascript" src="paper-full.js"></script>
+    <script type="text/javascript" src="howler.js"></script>
     <link rel="stylesheet" href="circles.css">
     <script type="text/paperscript" canvas="myCanvas">
+        var sound = new Howl({
+            src: ['sounds/bubbles.mp3']
+        });
         var circles = [];
         function onKeyDown(event) {
+            sound.play();
             var maxPoint = new Point(view.size.width, view.size.height);
             var randomPoint = Point.random();
             var point = maxPoint * randomPoint;
